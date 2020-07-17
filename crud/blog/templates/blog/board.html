@@ -1,0 +1,10 @@
+{%extends 'blog/layout.html'%}
+{%load static%}
+{%block test1%}
+{% for blogs in blogs.all %}
+    <h1>{{ blogs.title}}</h1>
+    <p>{{ blogs.pub_date }}</p>
+    <h2>{{ blogs.body}}</h2>
+    <br>
+{% endfor %}
+{%endblock%}
