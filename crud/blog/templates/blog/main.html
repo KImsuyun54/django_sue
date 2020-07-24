@@ -1,9 +1,12 @@
 {%extends 'blog/layout.html'%}
 {%load static%}
 {%block content%}
-
-<header> 
-    <img src="{%static 'blog/img/스누피.jpg'%}">    
-</header>
-
+<img src="{%static 'blog/img/스누피.jpg'%}">
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type="submit" value="submit">
+</form>
 {%endblock%}

@@ -19,7 +19,10 @@ import blog.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', blog.views.main, name='main'),
+    path('', blog.views.create, name='main'),
     path('layout/', blog.views.layout, name='layout'),
     path('board/', blog.views.board, name='board'),
+    path('create/', blog.views.create, name='create'),
+    path('update/<int:pk>', blog.views.update, name='update'),
+    path('delete/<int:pk>', blog.views.delete, name='delete'),
 ]

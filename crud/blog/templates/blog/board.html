@@ -1,10 +1,14 @@
 {%extends 'blog/layout.html'%}
 {%load static%}
 {%block test1%}
-{% for blogs in blogs.all %}
-    <h1>{{ blogs.title}}</h1>
-    <p>{{ blogs.pub_date }}</p>
-    <h2>{{ blogs.body}}</h2>
-    <br>
+<a href="{% url 'main' %}"></a>
+{% for post in posts.all %}
+    <p> {{post.name}} 의 행운의 색깔은
+    {{post.habit}} 입니다.
+    </p> 
+    <a href="{% url 'update' pk=post.pk %}"> 수정하기 </a>
+    <a href="{% url 'delete' pk=post.pk %}"> 삭제하기 </a>
+    <hr>
 {% endfor %}
+
 {%endblock%}
